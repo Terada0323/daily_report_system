@@ -50,6 +50,29 @@ public enum AttributeConst {
     REP_TITLE("title"),
     REP_CONTENT("content_msg");
 
+
+    //lesson17から変数の編集と追加開始位置
+    //従業員管理
+
+    //メモの管理
+
+    //日報の管理
+    //DAY_REPORT("daily_report"),
+    //DAY_REPORTS("daily_reports"),
+    //DAY_REP_COUNT("daily_reports_count"),
+    //DAY_REP_ID("id"),
+    //DAY_REP_DATE("daily_report_date"),
+    //DAY_REP_OE_CONTENT(""),
+    //DAY_REP_OE_TAG(""),
+    //DAY_REP_CONTENT("daily_report_content_msg");
+
+    //週報の管理
+
+
+    //lesson17から変数の編集と追加終了位置
+
+
+
     private final String text;
     private final Integer i;
 

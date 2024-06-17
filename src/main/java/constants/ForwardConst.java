@@ -13,6 +13,12 @@ public enum ForwardConst {
     ACT_REP("Report"),
     ACT_AUTH("Auth"),
 
+    //追加編集開始
+    ACT_DAY_REP("DayReport"),
+    ACT_WEEK_REP("WeekReport"),
+    ACT_MEMO("Memo"),
+    //追加編集終了
+
     //command
     CMD("command"),
     CMD_NONE(""),

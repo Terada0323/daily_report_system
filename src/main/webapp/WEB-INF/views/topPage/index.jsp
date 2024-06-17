@@ -18,7 +18,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>日報管理システムへようこそ</h2>
+        <h2>らくらく日報くん！！へようこそ</h2>
         <h3>【自分の日報　一覧】</h3>
         <table id="report_list">
             <tbody>
@@ -54,5 +54,9 @@
             </c:forEach>
         </div>
         <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">メモ一覧ページへ（要リンク編集）</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">メモ作成ページへ（要リンク編集）</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">日報ページへ（要リンク編集）</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">週報ページへ（要リンク編集）</a></p>
     </c:param>
 </c:import>

@@ -28,7 +28,10 @@
                     <c:if test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
                         <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
                     </c:if>
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">メモ一覧（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">メモ作成（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">週報管理（要リンク編集）</a>&nbsp;
                 </c:if>
             </div>
             <c:if test="${sessionScope.login_employee != null}">
