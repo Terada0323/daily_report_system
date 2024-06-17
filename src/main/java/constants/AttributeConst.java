@@ -48,14 +48,20 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content_msg");
+    REP_CONTENT("content_msg"),
 
 
     //lesson17から変数の編集と追加開始位置
     //従業員管理
 
     //メモの管理
-
+    MEMO("memo"),
+    MEMOS("memos"),
+    MEMO_COUNT("memos_count"),
+    MEMO_ID("id"),
+    MEMO_DATE("report_date"),
+    MEMO_TITLE("title"),
+    MEMO_CONTENT("content_msg");
     //日報の管理
     //DAY_REPORT("daily_report"),
     //DAY_REPORTS("daily_reports"),
