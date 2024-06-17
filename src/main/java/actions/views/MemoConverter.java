@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Memo;
-import models.Report;
 
 /**
  * 日報データのDTOモデル⇔Viewモデルの変換を行うクラス
@@ -69,7 +68,7 @@ public class MemoConverter {
      * @param m DTOモデル(コピー先)
      * @param mv Viewモデル(コピー元)
      */
-    public static void copyViewToModel(Report m, ReportView mv) {
+    public static void copyViewToModel(Memo m, MemoView mv) {
         m.setId(mv.getId());
         m.setEmployee(EmployeeConverter.toModel(mv.getEmployee()));
         m.setReportDate(mv.getReportDate());
