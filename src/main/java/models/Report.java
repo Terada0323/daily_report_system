@@ -90,6 +90,27 @@ public class Report {
     private String content2;
 
     /**
+     * 日報の明日の目標
+     */
+    @Lob
+    @Column(name = JpaConst.REP_TOMORROW_GOAL, nullable = true)
+    private String tomorrowGoal;
+
+    /**
+     * 日報のOE内容１
+     */
+    @Lob
+    @Column(name = JpaConst.REP_COL_CONTENT_OE1, nullable = true)
+    private String contentOe1;
+
+    /**
+     * 日報のOE内容２
+     */
+    @Lob
+    @Column(name = JpaConst.REP_COL_CONTENT_OE2, nullable = true)
+    private String contentOe2;
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

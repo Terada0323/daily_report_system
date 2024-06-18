@@ -114,6 +114,9 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
                     getRequestParam(AttributeConst.REP_CONTENT2),
+                    getRequestParam(AttributeConst.REP_TOMORROWGOAL),
+                    getRequestParam(AttributeConst.REP_CONTENT_OE1),
+                    getRequestParam(AttributeConst.REP_CONTENT_OE2),
                     null,
                     null);
 
@@ -212,6 +215,10 @@ public class ReportAction extends ActionBase {
             rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
             rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
             rv.setContent2(getRequestParam(AttributeConst.REP_CONTENT2));
+            rv.setTomorrowGoal(getRequestParam(AttributeConst.REP_TOMORROWGOAL));
+            rv.setContentOe1(getRequestParam(AttributeConst.REP_CONTENT_OE1));
+            rv.setContentOe2(getRequestParam(AttributeConst.REP_CONTENT_OE2));
+
 
             //日報データを更新する
             List<String> errors = service.update(rv);

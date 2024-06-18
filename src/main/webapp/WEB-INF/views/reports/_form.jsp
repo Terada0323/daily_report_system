@@ -32,6 +32,22 @@
 <label for="${AttributeConst.REP_CONTENT2.getValue()}">内容（気づき、学び）</label><br />
 <textarea  name="${AttributeConst.REP_CONTENT2.getValue()}" id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50">${report.content2}</textarea>
 <br /><br />
+
+<label for="${AttributeConst.REP_TOMORROWGOAL.getValue()}">明日の目標</label><br />
+<textarea  name="${AttributeConst.REP_TOMORROWGOAL.getValue()}" id="${AttributeConst.REP_TOMORROWGOAL.getValue()}" rows="10" cols="50">${report.tomorrowGoal}</textarea>
+<br /><br />
+
+<label for="${AttributeConst.REP_CONTENT_OE1.getValue()}">OEの内容１</label><br />
+<textarea  name="${AttributeConst.REP_CONTENT_OE1.getValue()}" id="${AttributeConst.REP_CONTENT_OE1.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
+<br /><br />
+
+<label for="${AttributeConst.REP_CONTENT_OE2.getValue()}">OEの内容２</label><br />
+<textarea  name="${AttributeConst.REP_CONTENT_OE2.getValue()}" id="${AttributeConst.REP_CONTENT_OE2.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
+<br /><br />
+
+
+
+
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>

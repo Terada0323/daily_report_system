@@ -32,6 +32,18 @@
                     <td><pre><c:out value="${report.content2}" /></pre></td>
                 </tr>
                 <tr>
+                    <th>明日の目標</th>
+                    <td><pre><c:out value="${report.tomorrowGoal}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>OEの内容１</th>
+                    <td><pre><c:out value="${report.contentOe1}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>OEの内容２</th>
+                    <td><pre><c:out value="${report.contentOe2}" /></pre></td>
+                </tr>
+                <tr>
                     <th>登録日時</th>
                     <fmt:parseDate value="${report.createdAt}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="createDay" type="date" />
                     <td><fmt:formatDate value="${createDay}" pattern="yyyy-MM-dd HH:mm:ss" /></td>

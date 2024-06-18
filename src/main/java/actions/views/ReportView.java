@@ -49,6 +49,21 @@ public class ReportView {
     private String content2;
 
     /**
+     * 日報の明日の目標
+     */
+    private String tomorrowGoal;
+
+    /**
+     * 日報のOEの内容1
+     */
+    private String contentOe1;
+
+    /**
+     * 日報のOEの内容2
+     */
+    private String contentOe2;
+
+    /**
      * 登録日時
      */
     private LocalDateTime createdAt;
