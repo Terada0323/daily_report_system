@@ -41,7 +41,7 @@ public interface JpaConst {
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
 
-    //テーブル追加編集開始位置
+    ///////テーブル追加編集開始位置///////
 
     //メモテーブル
     String TABLE_MEMO = "memos"; //テーブル名
@@ -64,17 +64,28 @@ public interface JpaConst {
     String DAY_REP_COL_CREATED_AT = "created_at"; //登録日時
     String DAY_REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
-    //週報テーブル
-    String TABLE_WEEK_REP = "weeklyReports"; //テーブル名
-    //日報テーブルカラム
-    String WEEK_REP_COL_ID = "id"; //id
-    String WEEkREP_COL_EMP = "employee_id"; //週報を作成した従業員のid
-    String WEEK_REP_COL_WEEK_DATE = "report_date"; //いつの週報かを示す日付
-    String WEEK_REP_COL_CONTENT = "content"; //週報の内容
-    String WEEK_REP_COL_CREATED_AT = "created_at"; //登録日時
-    String WEEK_REP_COL_UPDATED_AT = "updated_at"; //更新日時
+    //週報テーブル（まったく同じやったのでコメントアウトします：岡田）
+//    String TABLE_WEEK_REP = "weeklyReports"; //テーブル名
+//    //日報テーブルカラム
+//    String WEEK_REP_COL_ID = "id"; //id
+//    String WEEkREP_COL_EMP = "employee_id"; //週報を作成した従業員のid
+//    String WEEK_REP_COL_WEEK_DATE = "report_date"; //いつの週報かを示す日付
+//    String WEEK_REP_COL_CONTENT = "content"; //週報の内容
+//    String WEEK_REP_COL_CREATED_AT = "created_at"; //登録日時
+//    String WEEK_REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
-    //テーブル追加編集終了位置
+    //週報テーブル（0617_2135追加）
+    String TABLE_WEEKREP = "weeklyreports"; //テーブル名
+    //週報テーブルカラム
+    String WEEKREP_COL_ID = "id"; //id
+    String WEEKREP_COL_EMP = "employee_id"; //週報を作成した従業員のid
+    String WEEKREP_COL_WEEKREP_DATE = "report_date"; //いつの週報かを示す日付
+    String WEEKREP_COL_TITLE = "title"; //週報のタイトル
+    String WEEKREP_COL_CONTENT = "content"; //週報の内容
+    String WEEKREP_COL_CREATED_AT = "created_at"; //登録日時
+    String WEEKREP_COL_UPDATED_AT = "updated_at"; //更新日時
+    String WEEKREP_COL_TARGET = "target"; //目標（0617_2150追加）
+    ///////テーブル追加編集終了位置///////
 
 
     //Entity名
@@ -82,9 +93,9 @@ public interface JpaConst {
     String ENTITY_REP = "report"; //日報
 
     //Entity名追加編集開始位置
-    String ENTITY_MEMO = "memo"; //日報
+    String ENTITY_MEMO = "memo"; //メモ
     String ENTITY_DAY_REP = "dailyReport"; //日報
-    String ENTITY_WEEk_REP = "weeklyReport"; //日報
+    String ENTITY_WEEK_REP = "weeklyreport"; //日報
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号
@@ -131,6 +142,21 @@ public interface JpaConst {
     //指定した従業員が作成した日報の件数を取得する
     String Q_MEMO_COUNT_ALL_MINE = ENTITY_MEMO + ".countAllMine";
     String Q_MEMO_COUNT_ALL_MINE_DEF = "SELECT COUNT(m) FROM Memo AS m WHERE m.employee = :" + JPQL_PARM_EMPLOYEE;
+
+    //週報DBからデータ取得（0617_2135追加）
+    //全ての週報をidの降順に取得する
+    String Q_WEEKREP_GET_ALL = ENTITY_WEEK_REP + ".getAll";
+    String Q_WEEKREP_GET_ALL_DEF = "SELECT r FROM weeklyreports AS r ORDER BY r.id DESC";
+    //全ての週報の件数を取得する
+    String Q_WEEKREP_COUNT = ENTITY_WEEK_REP + ".count";
+    String Q_WEEKREP_COUNT_DEF = "SELECT COUNT(r) FROM weeklyreports AS r";
+    //指定した従業員が作成した週報を全件idの降順で取得する
+    String Q_WEEKREP_GET_ALL_MINE = ENTITY_WEEK_REP + ".getAllMine";
+    String Q_WEEKREP_GET_ALL_MINE_DEF = "SELECT r FROM weeklyreports AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE + " ORDER BY r.id DESC";
+    //指定した従業員が作成した週報の件数を取得する
+    String Q_WEEKREP_COUNT_ALL_MINE = ENTITY_WEEK_REP + ".countAllMine";
+    String Q_WEEKREP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM weeklyreports AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
+
     //新規追加終了位置
 
 }
