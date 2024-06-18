@@ -59,7 +59,7 @@ public enum AttributeConst {
     MEMOS("memos"),
     MEMO_COUNT("memos_count"),
     MEMO_ID("id"),
-    MEMO_DATE("report_date"),
+    MEMO_DATE("memo_date"),
     MEMO_TITLE("title"),
     MEMO_CONTENT("content_msg");
     //日報の管理

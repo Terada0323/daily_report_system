@@ -20,7 +20,7 @@ public class MemoConverter {
         return new Memo(
                 mv.getId(),
                 EmployeeConverter.toModel(mv.getEmployee()),
-                mv.getReportDate(),
+                mv.getMemoDate(),
                 mv.getTitle(),
                 mv.getContent(),
                 mv.getCreatedAt(),
@@ -41,7 +41,7 @@ public class MemoConverter {
         return new MemoView(
                 m.getId(),
                 EmployeeConverter.toView(m.getEmployee()),
-                m.getReportDate(),
+                m.getMemoDate(),
                 m.getTitle(),
                 m.getContent(),
                 m.getCreatedAt(),
@@ -71,7 +71,7 @@ public class MemoConverter {
     public static void copyViewToModel(Memo m, MemoView mv) {
         m.setId(mv.getId());
         m.setEmployee(EmployeeConverter.toModel(mv.getEmployee()));
-        m.setReportDate(mv.getReportDate());
+        m.setMemoDate(mv.getMemoDate());
         m.setTitle(mv.getTitle());
         m.setContent(mv.getContent());
         m.setCreatedAt(mv.getCreatedAt());

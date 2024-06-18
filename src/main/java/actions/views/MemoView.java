@@ -31,7 +31,7 @@ public class MemoView {
     /**
      * いつの日報かを示す日付
      */
-    private LocalDate reportDate;
+    private LocalDate memoDate;
 
     /**
      * 日報のタイトル

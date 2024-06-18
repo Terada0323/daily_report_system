@@ -45,7 +45,7 @@ public interface JpaConst {
 
     //メモテーブル
     String TABLE_MEMO = "memos"; //テーブル名
-    //日報テーブルカラム
+    //メモテーブルカラム
     String MEMO_COL_ID = "id"; //id
     String MEMO_COL_EMP = "employee_id"; //メモを作成した従業員のid
     String MEMO_COL_MEMO_DATE = "memo_date"; //いつのメモかを示す日付

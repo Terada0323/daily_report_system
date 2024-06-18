@@ -67,7 +67,7 @@ public class Memo {
      * いつの日報かを示す日付
      */
     @Column(name = JpaConst.MEMO_COL_MEMO_DATE, nullable = false)
-    private LocalDate reportDate;
+    private LocalDate memoDate;
 
     /**
      * 日報のタイトル

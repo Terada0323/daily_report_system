@@ -25,11 +25,11 @@
                     <th class="memo_action">操作</th>
                 </tr>
                 <c:forEach var="memo" items="${memos}" varStatus="status">
-                    <fmt:parseDate value="${memo.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
+                    <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
 
                     <tr class="row${status.count % 2}">
                         <td class="memo_name"><c:out value="${memo.employee.name}" /></td>
-                        <td class="memo_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="memo_title">${memo.title}</td>
                         <td class="memo_action"><a href="<c:url value='?action=${actMemo}&command=${commShow}&id=${memo.id}' />">詳細を見る</a></td>
                     </tr>

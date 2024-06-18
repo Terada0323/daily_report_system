@@ -20,8 +20,8 @@
                 </tr>
                 <tr>
                     <th>日付</th>
-                    <fmt:parseDate value="${memo.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
-                    <td><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
+                    <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
+                    <td><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                 </tr>
                 <tr>
                     <th>内容</th>

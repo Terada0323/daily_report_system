@@ -76,7 +76,7 @@ public class MemoAction extends ActionBase {
 
         //日報情報の空インスタンスに、日報の日付＝今日の日付を設定する
         MemoView mv = new MemoView();
-        mv.setReportDate(LocalDate.now());
+        mv.setMemoDate(LocalDate.now());
         putRequestScope(AttributeConst.MEMO, mv); //日付のみ設定済みの日報インスタンス
 
         //新規登録画面を表示
@@ -96,11 +96,11 @@ public class MemoAction extends ActionBase {
 
             //メモの日付が入力されていなければ、今日の日付を設定
             LocalDate day = null;
-            if (getRequestParam(AttributeConst.REP_DATE) == null
-                    || getRequestParam(AttributeConst.REP_DATE).equals("")) {
+            if (getRequestParam(AttributeConst.MEMO_DATE) == null
+                    || getRequestParam(AttributeConst.MEMO_DATE).equals("")) {
                 day = LocalDate.now();
             } else {
-                day = LocalDate.parse(getRequestParam(AttributeConst.REP_DATE));
+                day = LocalDate.parse(getRequestParam(AttributeConst.MEMO_DATE));
             }
 
             //セッションからログイン中の従業員情報を取得
@@ -187,12 +187,55 @@ public class MemoAction extends ActionBase {
         } else {
 
             putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
-            putRequestScope(AttributeConst.REPORT, mv); //取得したメモデータ
+            putRequestScope(AttributeConst.MEMO, mv); //取得したメモデータ
 
             //編集画面を表示
             forward(ForwardConst.FW_MEMO_EDIT);
         }
 
+    }
+
+    /**
+     * 更新を行う
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void update() throws ServletException, IOException {
+
+        //CSRF対策 tokenのチェック
+        if (checkToken()) {
+
+            //idを条件に日報データを取得する
+            MemoView mv = service.findOne(toNumber(getRequestParam(AttributeConst.MEMO_ID)));
+
+            //入力された日報内容を設定する
+            mv.setMemoDate(toLocalDate(getRequestParam(AttributeConst.MEMO_DATE)));
+            mv.setTitle(getRequestParam(AttributeConst.MEMO_TITLE));
+            mv.setContent(getRequestParam(AttributeConst.MEMO_CONTENT));
+
+            //日報データを更新する
+            List<String> errors = service.update(mv);
+
+            if (errors.size() > 0) {
+                //更新中にエラーが発生した場合
+
+                putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
+                putRequestScope(AttributeConst.MEMO, mv); //入力された日報情報
+                putRequestScope(AttributeConst.ERR, errors); //エラーのリスト
+
+                //編集画面を再表示
+                forward(ForwardConst.FW_MEMO_EDIT);
+            } else {
+                //更新中にエラーがなかった場合
+
+                //セッションに更新完了のフラッシュメッセージを設定
+                putSessionScope(AttributeConst.FLUSH, MessageConst.I_UPDATED.getMessage());
+
+                //一覧画面にリダイレクト
+                redirect(ForwardConst.ACT_MEMO, ForwardConst.CMD_INDEX);
+
+            }
+        }
     }
 
 }
