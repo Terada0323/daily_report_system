@@ -7,9 +7,11 @@
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
+<c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
 
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
+<c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,7 +32,7 @@
                     </c:if>
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
                     <a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧（要リンク編集）</a>&nbsp;
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">メモ作成（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a>&nbsp;
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理（要リンク編集）</a>&nbsp;
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">週報管理（要リンク編集）</a>&nbsp;
                 </c:if>
