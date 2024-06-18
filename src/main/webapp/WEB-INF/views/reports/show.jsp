@@ -47,7 +47,7 @@
                     <th>OEのタグ1</th>
                     <td><c:choose>
                             <c:when test="${report.oeFlag1 == 0}">1</c:when>
-                            <c:when test="${report.oeFlag1== 1}">2</c:when>
+                            <c:when test="${report.oeFlag1 == 1}">2</c:when>
                             <c:when test="${report.oeFlag1 == 2}">3</c:when>
                             <c:when test="${report.oeFlag1 == 3}">4</c:when>
                             <c:when test="${report.oeFlag1 == 4}">5</c:when>

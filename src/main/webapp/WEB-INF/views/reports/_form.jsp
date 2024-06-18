@@ -48,26 +48,26 @@
 <label for="${AttributeConst.REP_OE1_FLG.getValue()}">OE1のタグ</label><br />
 <select name="${AttributeConst.REP_OE1_FLG.getValue()}" id="${AttributeConst.REP_OE1_FLG.getValue()}">
     <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
-    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
+    <option value="${AttributeConst.OE_3.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+    <option value="${AttributeConst.OE_4.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+    <option value="${AttributeConst.OE_5.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+    <option value="${AttributeConst.OE_6.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+    <option value="${AttributeConst.OE_7.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+    <option value="${AttributeConst.OE_8.getIntegerValue()}"<c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
 </select>
 <br /><br />
 
 <label for="${AttributeConst.REP_OE2_FLG.getValue()}">OE2のタグ</label><br />
-<select name="${AttributeConst.REP_OE2_FLG.getValue()}" id="${AttributeConst.REP_OE1_FLG.getValue()}">
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
+<select name="${AttributeConst.REP_OE2_FLG.getValue()}" id="${AttributeConst.REP_OE2_FLG.getValue()}">
+    <option value="${AttributeConst.OE_1.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
     <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
-    <option value="${AttributeConst.OE_2.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+    <option value="${AttributeConst.OE_3.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+    <option value="${AttributeConst.OE_4.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+    <option value="${AttributeConst.OE_5.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+    <option value="${AttributeConst.OE_6.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+    <option value="${AttributeConst.OE_7.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+    <option value="${AttributeConst.OE_8.getIntegerValue()}"<c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
 </select>
 <br /><br />
 
