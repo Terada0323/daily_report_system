@@ -111,6 +111,20 @@ public class Report {
     private String contentOe2;
 
     /**
+     * OEのタグ１
+     */
+    @Column(name = JpaConst.REP_COL_OE_FLAG1, nullable = true)
+    private Integer oeFlag1;
+
+
+    /**
+     * OEのタグ
+     */
+    @Column(name = JpaConst.REP_COL_OE_FLAG2, nullable = true)
+    private Integer oeFlag2;
+
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

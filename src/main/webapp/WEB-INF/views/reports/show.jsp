@@ -44,6 +44,38 @@
                     <td><pre><c:out value="${report.contentOe2}" /></pre></td>
                 </tr>
                 <tr>
+                    <th>OEのタグ1</th>
+                    <td><c:choose>
+                            <c:when test="${report.oeFlag1 == 0}">1</c:when>
+                            <c:when test="${report.oeFlag1== 1}">2</c:when>
+                            <c:when test="${report.oeFlag1 == 2}">3</c:when>
+                            <c:when test="${report.oeFlag1 == 3}">4</c:when>
+                            <c:when test="${report.oeFlag1 == 4}">5</c:when>
+                            <c:when test="${report.oeFlag1 == 5}">6</c:when>
+                            <c:when test="${report.oeFlag1 == 6}">7</c:when>
+                            <c:when test="${report.oeFlag1 == 7}">8</c:when>
+
+                        </c:choose>
+
+                        </td>
+                </tr>
+                <tr>
+                    <th>OEのタグ2</th>
+                    <td><c:choose>
+                            <c:when test="${report.oeFlag2 == 0}">1</c:when>
+                            <c:when test="${report.oeFlag2 == 1}">2</c:when>
+                            <c:when test="${report.oeFlag2 == 2}">3</c:when>
+                            <c:when test="${report.oeFlag2 == 3}">4</c:when>
+                            <c:when test="${report.oeFlag2 == 4}">5</c:when>
+                            <c:when test="${report.oeFlag2 == 5}">6</c:when>
+                            <c:when test="${report.oeFlag2 == 6}">7</c:when>
+                            <c:when test="${report.oeFlag2 == 7}">8</c:when>
+
+                        </c:choose>
+
+                        </td>
+                </tr>
+                <tr>
                     <th>登録日時</th>
                     <fmt:parseDate value="${report.createdAt}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="createDay" type="date" />
                     <td><fmt:formatDate value="${createDay}" pattern="yyyy-MM-dd HH:mm:ss" /></td>

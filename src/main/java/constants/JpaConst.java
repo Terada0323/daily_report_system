@@ -44,6 +44,17 @@ public interface JpaConst {
     String REP_TOMORROW_GOAL = "report_tomorrow_goal"; //明日の目標
     String REP_COL_CONTENT_OE1 = "report_content_oe1"; //OEメモの内容１
     String REP_COL_CONTENT_OE2 = "report_content_oe2"; //OEメモの内容２
+    String REP_COL_OE_FLAG1 = "oe_flag1"; //OEのタグ１
+    String REP_COL_OE_FLAG2 = "oe_flag2"; //OEのタグ２
+
+    int OE_1 = 0; //目的
+    int OE_2 = 1; //正しい
+    int OE_3 = 2; //大胆
+    int OE_4 = 3; //当事者
+    int OE_5=  4; //相手軸
+    int OE_6 = 5; //礼節
+    int OE_7 = 6; //スピード
+    int OE_8=  7; //学び続ける
 
 
 

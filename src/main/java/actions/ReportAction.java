@@ -117,6 +117,8 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TOMORROWGOAL),
                     getRequestParam(AttributeConst.REP_CONTENT_OE1),
                     getRequestParam(AttributeConst.REP_CONTENT_OE2),
+                    toNumber(getRequestParam(AttributeConst.REP_OE1_FLG)),
+                    toNumber(getRequestParam(AttributeConst.REP_OE2_FLG)),
                     null,
                     null);
 
@@ -218,6 +220,8 @@ public class ReportAction extends ActionBase {
             rv.setTomorrowGoal(getRequestParam(AttributeConst.REP_TOMORROWGOAL));
             rv.setContentOe1(getRequestParam(AttributeConst.REP_CONTENT_OE1));
             rv.setContentOe2(getRequestParam(AttributeConst.REP_CONTENT_OE2));
+            rv.setOeFlag1(toNumber(getRequestParam(AttributeConst.REP_OE1_FLG)));
+            rv.setOeFlag2(toNumber(getRequestParam(AttributeConst.REP_OE2_FLG)));
 
 
             //日報データを更新する

@@ -27,6 +27,8 @@ public class ReportConverter {
                 rv.getTomorrowGoal(),
                 rv.getContentOe1(),
                 rv.getContentOe2(),
+                rv.getOeFlag1(),
+                rv.getOeFlag2(),
                 rv.getCreatedAt(),
                 rv.getUpdatedAt());
     }
@@ -52,6 +54,8 @@ public class ReportConverter {
                 r.getTomorrowGoal(),
                 r.getContentOe1(),
                 r.getContentOe2(),
+                r.getOeFlag1(),
+                r.getOeFlag2(),
                 r.getCreatedAt(),
                 r.getUpdatedAt());
     }
@@ -86,6 +90,8 @@ public class ReportConverter {
         r.setTomorrowGoal(rv.getTomorrowGoal());
         r.setContentOe1(rv.getContentOe1());
         r.setContentOe2(rv.getContentOe2());
+        r.setOeFlag1(rv.getOeFlag1());
+        r.setOeFlag2(rv.getOeFlag2());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
 

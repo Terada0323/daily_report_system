@@ -53,6 +53,17 @@ public enum AttributeConst {
     REP_TOMORROWGOAL("tomorrow_goal"),
     REP_CONTENT_OE1("content_oe1"),
     REP_CONTENT_OE2("content_oe2"),
+    REP_OE1_FLG("oe1_flag"),
+    REP_OE2_FLG("oe2_flag"),
+
+    OE_1(0),
+    OE_2(1),
+    OE_3(2),
+    OE_4(3),
+    OE_5(4),
+    OE_6(5),
+    OE_7(6),
+    OE_8(7),
 
 
     //lesson17から変数の編集と追加開始位置

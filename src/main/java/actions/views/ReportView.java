@@ -64,6 +64,16 @@ public class ReportView {
     private String contentOe2;
 
     /**
+     * OEのタグ1
+     */
+    private Integer oeFlag1;
+
+    /**
+     * OEのタグ2
+     */
+    private Integer oeFlag2;
+
+    /**
      * 登録日時
      */
     private LocalDateTime createdAt;
