@@ -17,7 +17,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-    <title><c:out value="日報管理システム" /></title>
+    <title><c:out value="らくらく日報くん" /></title>
     <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
     <link rel="stylesheet" href="<c:url value='/css/style.css' />">
 </head>
@@ -25,16 +25,16 @@
     <div id="wrapper">
         <div id="header">
             <div id="header_menu">
-                <h1><a href="<c:url value='/?action=${actTop}&command=${commIdx}' />">日報管理システム</a></h1>&nbsp;&nbsp;&nbsp;
+                <h1><a href="<c:url value='/?action=${actTop}&command=${commIdx}' />">らくらく日報くん</a></h1>&nbsp;&nbsp;&nbsp;
                 <c:if test="${sessionScope.login_employee != null}">
                     <c:if test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
                         <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
                     </c:if>
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
-                    <a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧</a>&nbsp;
                     <a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a>&nbsp;
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理（要リンク編集）</a>&nbsp;
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">週報管理（要リンク編集）</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理(要リンク編集)</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">週報管理(要リンク編集)</a>&nbsp;
                 </c:if>
             </div>
             <c:if test="${sessionScope.login_employee != null}">
@@ -46,7 +46,7 @@
             </c:if>
         </div>
         <div id="content">${param.content}</div>
-        <div id="footer">by Taro Kirameki.</div>
+        <div id="footer">by Taiki Terada and Naoki Okada.</div>
     </div>
 </body>
 </html>

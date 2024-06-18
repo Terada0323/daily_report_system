@@ -24,11 +24,11 @@
                     <td><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                 </tr>
                 <tr>
-                    <th>内容</th>
+                    <th>内容（事実）</th>
                     <td><pre><c:out value="${memo.content}" /></pre></td>
                 </tr>
                 <tr>
-                    <th>内容2</th>
+                    <th>内容（気づき、感情）</th>
                     <td><pre><c:out value="${memo.content2}" /></pre></td>
                 </tr>
                 <tr>

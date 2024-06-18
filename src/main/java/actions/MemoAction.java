@@ -213,6 +213,7 @@ public class MemoAction extends ActionBase {
             mv.setMemoDate(toLocalDate(getRequestParam(AttributeConst.MEMO_DATE)));
             mv.setTitle(getRequestParam(AttributeConst.MEMO_TITLE));
             mv.setContent(getRequestParam(AttributeConst.MEMO_CONTENT));
+            mv.setContent2(getRequestParam(AttributeConst.MEMO_CONTENT2));
 
             //日報データを更新する
             List<String> errors = service.update(mv);

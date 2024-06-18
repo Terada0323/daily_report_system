@@ -25,11 +25,11 @@
 <input type="text" name="${AttributeConst.MEMO_TITLE.getValue()}" id="${AttributeConst.MEMO_TITLE.getValue()}" value="${memo.title}" />
 <br /><br />
 
-<label for="${AttributeConst.MEMO_CONTENT.getValue()}">内容</label><br />
+<label for="${AttributeConst.MEMO_CONTENT.getValue()}">内容（事実）</label><br />
 <textarea  name="${AttributeConst.MEMO_CONTENT.getValue()}" id="${AttributeConst.MEMO_CONTENT.getValue()}" rows="10" cols="50">${memo.content}</textarea>
 <br /><br />
 
-<label for="${AttributeConst.MEMO_CONTENT2.getValue()}">内容2</label><br />
+<label for="${AttributeConst.MEMO_CONTENT2.getValue()}">内容（気づき、感情）</label><br />
 <textarea  name="${AttributeConst.MEMO_CONTENT2.getValue()}" id="${AttributeConst.MEMO_CONTENT2.getValue()}" rows="10" cols="50">${memo.content2}</textarea>
 <br /><br />
 
