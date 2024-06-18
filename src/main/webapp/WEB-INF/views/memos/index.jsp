@@ -16,7 +16,7 @@
             </div>
         </c:if>
         <h2>メモ　一覧</h2>
-        <table id="report_list">
+        <table id="memo_list">
             <tbody>
                 <tr>
                     <th class="memo_name">氏名</th>
@@ -38,7 +38,7 @@
         </table>
 
         <div id="pagination">
-            （全 ${reports_count} 件）<br />
+            （全 ${memos_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((memos_count - 1) / maxRow) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
