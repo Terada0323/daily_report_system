@@ -83,6 +83,13 @@ public class Report {
     private String content;
 
     /**
+     * 日報の内容２
+     */
+    @Lob
+    @Column(name = JpaConst.REP_COL_CONTENT2, nullable = true)
+    private String content2;
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

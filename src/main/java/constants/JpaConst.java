@@ -40,6 +40,8 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
+    String REP_COL_CONTENT2 = "report_content2"; //メモの内容
+
 
     ///////テーブル追加編集開始位置///////
 

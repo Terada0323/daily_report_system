@@ -24,8 +24,12 @@
                     <td><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
                 </tr>
                 <tr>
-                    <th>内容</th>
+                    <th>内容（事実）</th>
                     <td><pre><c:out value="${report.content}" /></pre></td>
+                </tr>
+                 <tr>
+                    <th>内容（気づき、学び）</th>
+                    <td><pre><c:out value="${report.content2}" /></pre></td>
                 </tr>
                 <tr>
                     <th>登録日時</th>

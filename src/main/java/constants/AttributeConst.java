@@ -49,6 +49,7 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content_msg"),
+    REP_CONTENT2("content_msg2"),
 
 
     //lesson17から変数の編集と追加開始位置

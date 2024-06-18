@@ -25,8 +25,12 @@
 <input type="text" name="${AttributeConst.REP_TITLE.getValue()}" id="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
+<label for="${AttributeConst.REP_CONTENT.getValue()}">内容（事実）</label><br />
 <textarea  name="${AttributeConst.REP_CONTENT.getValue()}" id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
+<br /><br />
+
+<label for="${AttributeConst.REP_CONTENT2.getValue()}">内容（気づき、学び）</label><br />
+<textarea  name="${AttributeConst.REP_CONTENT2.getValue()}" id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50">${report.content2}</textarea>
 <br /><br />
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
