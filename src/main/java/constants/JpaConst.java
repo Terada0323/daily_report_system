@@ -54,6 +54,10 @@ public interface JpaConst {
     String MEMO_COL_CREATED_AT = "created_at"; //登録日時
     String MEMO_COL_UPDATED_AT = "updated_at"; //更新日時
 
+    String MEMO_COL_CONTENT2 = "memo_content2"; //メモの内容
+
+
+
     //日報テーブル
     String TABLE_DAY_REP = "dailyReports"; //テーブル名
     //日報テーブルカラム
@@ -130,16 +134,16 @@ public interface JpaConst {
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
 
     //新規追加開始位置
-  //全ての日報をidの降順に取得する
+  //全てのメモをidの降順に取得する
     String Q_MEMO_GET_ALL = ENTITY_MEMO + ".getAll";
     String Q_MEMO_GET_ALL_DEF = "SELECT m FROM Memo AS m ORDER BY m.id DESC";
-    //全ての日報の件数を取得する
+    //全てのメモの件数を取得する
     String Q_MEMO_COUNT = ENTITY_MEMO + ".count";
     String Q_MEMO_COUNT_DEF = "SELECT COUNT(m) FROM Memo AS m";
-    //指定した従業員が作成した日報を全件idの降順で取得する
+    //指定した従業員が作成したメモを全件idの降順で取得する
     String Q_MEMO_GET_ALL_MINE = ENTITY_MEMO + ".getAllMine";
     String Q_MEMO_GET_ALL_MINE_DEF = "SELECT m FROM Memo AS m WHERE m.employee = :" + JPQL_PARM_EMPLOYEE + " ORDER BY m.id DESC";
-    //指定した従業員が作成した日報の件数を取得する
+    //指定した従業員が作成したメモの件数を取得する
     String Q_MEMO_COUNT_ALL_MINE = ENTITY_MEMO + ".countAllMine";
     String Q_MEMO_COUNT_ALL_MINE_DEF = "SELECT COUNT(m) FROM Memo AS m WHERE m.employee = :" + JPQL_PARM_EMPLOYEE;
 

@@ -23,8 +23,10 @@ public class MemoConverter {
                 mv.getMemoDate(),
                 mv.getTitle(),
                 mv.getContent(),
+                mv.getContent2(),
                 mv.getCreatedAt(),
                 mv.getUpdatedAt());
+
     }
 
     /**
@@ -44,8 +46,10 @@ public class MemoConverter {
                 m.getMemoDate(),
                 m.getTitle(),
                 m.getContent(),
+                m.getContent2(),
                 m.getCreatedAt(),
                 m.getUpdatedAt());
+
     }
 
     /**
@@ -74,6 +78,7 @@ public class MemoConverter {
         m.setMemoDate(mv.getMemoDate());
         m.setTitle(mv.getTitle());
         m.setContent(mv.getContent());
+        m.setContent2(mv.getContent2());
         m.setCreatedAt(mv.getCreatedAt());
         m.setUpdatedAt(mv.getUpdatedAt());
 

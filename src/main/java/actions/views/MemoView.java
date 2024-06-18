@@ -44,6 +44,11 @@ public class MemoView {
     private String content;
 
     /**
+     * 日報2の内容
+     */
+    private String content2;
+
+    /**
      * 登録日時
      */
     private LocalDateTime createdAt;

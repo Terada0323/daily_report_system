@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * 日報データのDTOモデル
+ * メモデータのDTOモデル
  *
  */
 @Table(name = JpaConst.TABLE_MEMO)
@@ -57,30 +57,37 @@ public class Memo {
     private Integer id;
 
     /**
-     * 日報を登録した従業員
+     * メモを登録した従業員
      */
     @ManyToOne
     @JoinColumn(name = JpaConst.MEMO_COL_EMP, nullable = false)
     private Employee employee;
 
     /**
-     * いつの日報かを示す日付
+     * いつのメモかを示す日付
      */
     @Column(name = JpaConst.MEMO_COL_MEMO_DATE, nullable = false)
     private LocalDate memoDate;
 
     /**
-     * 日報のタイトル
+     * メモのタイトル
      */
     @Column(name = JpaConst.MEMO_COL_TITLE, length = 255, nullable = false)
     private String title;
 
     /**
-     * 日報の内容
+     * メモの内容
      */
     @Lob
     @Column(name = JpaConst.MEMO_COL_CONTENT, nullable = false)
     private String content;
+
+    /**
+     * メモの内容２　追加
+     */
+    @Lob
+    @Column(name = JpaConst.MEMO_COL_CONTENT2, nullable = true)
+    private String content2;
 
     /**
      * 登録日時
@@ -93,5 +100,7 @@ public class Memo {
      */
     @Column(name = JpaConst.MEMO_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
+
+
 
 }

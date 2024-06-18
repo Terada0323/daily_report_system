@@ -98,8 +98,8 @@ public class MemoService extends ServiceBase {
     }
 
     /**
-     * 画面から入力された日報の登録内容を元に、日報データを更新する
-     * @param rv 日報の更新内容
+     * 画面から入力されたメモの登録内容を元に、メモデータを更新する
+     * @param rv メモの更新内容
      * @return バリデーションで発生したエラーのリスト
      */
     public List<String> update(MemoView mv) {

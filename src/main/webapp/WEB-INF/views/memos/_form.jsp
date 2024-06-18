@@ -21,13 +21,18 @@
 <c:out value="${sessionScope.login_employee.name}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
-<input type="text" name="${AttributeConst.REP_TITLE.getValue()}" id="${AttributeConst.REP_TITLE.getValue()}" value="${memo.title}" />
+<label for="${AttributeConst.MEMO_TITLE.getValue()}">タイトル</label><br />
+<input type="text" name="${AttributeConst.MEMO_TITLE.getValue()}" id="${AttributeConst.MEMO_TITLE.getValue()}" value="${memo.title}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
-<textarea  name="${AttributeConst.REP_CONTENT.getValue()}" id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${memo.content}</textarea>
+<label for="${AttributeConst.MEMO_CONTENT.getValue()}">内容</label><br />
+<textarea  name="${AttributeConst.MEMO_CONTENT.getValue()}" id="${AttributeConst.MEMO_CONTENT.getValue()}" rows="10" cols="50">${memo.content}</textarea>
 <br /><br />
-<input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${memo.id}" />
+
+<label for="${AttributeConst.MEMO_CONTENT2.getValue()}">内容2</label><br />
+<textarea  name="${AttributeConst.MEMO_CONTENT2.getValue()}" id="${AttributeConst.MEMO_CONTENT2.getValue()}" rows="10" cols="50">${memo.content2}</textarea>
+<br /><br />
+
+<input type="hidden" name="${AttributeConst.MEMO_ID.getValue()}" value="${memo.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>

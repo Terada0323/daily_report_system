@@ -74,10 +74,10 @@ public class MemoAction extends ActionBase {
 
         putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
 
-        //日報情報の空インスタンスに、日報の日付＝今日の日付を設定する
+        //メモ情報の空インスタンスに、メモの日付＝今日の日付を設定する
         MemoView mv = new MemoView();
         mv.setMemoDate(LocalDate.now());
-        putRequestScope(AttributeConst.MEMO, mv); //日付のみ設定済みの日報インスタンス
+        putRequestScope(AttributeConst.MEMO, mv); //日付のみ設定済みのメモインスタンス
 
         //新規登録画面を表示
         forward(ForwardConst.FW_MEMO_NEW);
@@ -113,6 +113,7 @@ public class MemoAction extends ActionBase {
                     day,
                     getRequestParam(AttributeConst.MEMO_TITLE),
                     getRequestParam(AttributeConst.MEMO_CONTENT),
+                    getRequestParam(AttributeConst.MEMO_CONTENT2),
                     null,
                     null);
 
