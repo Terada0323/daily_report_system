@@ -55,6 +55,10 @@ public interface JpaConst {
     String MEMO_COL_UPDATED_AT = "updated_at"; //更新日時
 
     String MEMO_COL_CONTENT2 = "memo_content2"; //メモの内容
+    String MEMO_COL_EMOTION_FLAG = "emotion_flag"; //管理者権限
+
+    int FEEL_HAPPY = 0; //幸せ
+    int FEEL_SAD = 1; //悲しい…
 
 
 

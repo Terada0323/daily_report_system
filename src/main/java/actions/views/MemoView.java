@@ -57,4 +57,9 @@ public class MemoView {
      * 更新日時
      */
     private LocalDateTime updatedAt;
+
+    /**
+     * 感情のタグ（幸せ：0、悲しい：1）
+     */
+    private Integer emotionFlag;
 }

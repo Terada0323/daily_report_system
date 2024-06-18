@@ -115,7 +115,8 @@ public class MemoAction extends ActionBase {
                     getRequestParam(AttributeConst.MEMO_CONTENT),
                     getRequestParam(AttributeConst.MEMO_CONTENT2),
                     null,
-                    null);
+                    null,
+                    toNumber(getRequestParam(AttributeConst.MEMO_EMOTION_FLG)));
 
             //日報情報登録
             List<String> errors = service.create(mv);
@@ -214,6 +215,7 @@ public class MemoAction extends ActionBase {
             mv.setTitle(getRequestParam(AttributeConst.MEMO_TITLE));
             mv.setContent(getRequestParam(AttributeConst.MEMO_CONTENT));
             mv.setContent2(getRequestParam(AttributeConst.MEMO_CONTENT2));
+            mv.setEmotionFlag(toNumber(getRequestParam(AttributeConst.MEMO_EMOTION_FLG)));
 
             //日報データを更新する
             List<String> errors = service.update(mv);

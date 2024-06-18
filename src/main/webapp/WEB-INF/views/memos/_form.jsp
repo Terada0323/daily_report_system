@@ -33,6 +33,14 @@
 <textarea  name="${AttributeConst.MEMO_CONTENT2.getValue()}" id="${AttributeConst.MEMO_CONTENT2.getValue()}" rows="10" cols="50">${memo.content2}</textarea>
 <br /><br />
 
+<label for="${AttributeConst.MEMO_EMOTION_FLG.getValue()}">感情のタグ</label><br />
+<select name="${AttributeConst.MEMO_EMOTION_FLG.getValue()}" id="${AttributeConst.MEMO_EMOTION_FLG.getValue()}">
+    <option value="${AttributeConst.FEEL_HAPPY.getIntegerValue()}"<c:if test="${memo.emotionFlag == AttributeConst.FEEL_HAPPY.getIntegerValue()}"> selected</c:if>>幸せ</option>
+    <option value="${AttributeConst.FEEL_SAD.getIntegerValue()}"<c:if test="${memo.emotionFlag == AttributeConst.FEEL_SAD.getIntegerValue()}"> selected</c:if>>悲しい</option>
+</select>
+<br /><br />
+
+
 <input type="hidden" name="${AttributeConst.MEMO_ID.getValue()}" value="${memo.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>

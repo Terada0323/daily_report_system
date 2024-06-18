@@ -25,7 +25,8 @@ public class MemoConverter {
                 mv.getContent(),
                 mv.getContent2(),
                 mv.getCreatedAt(),
-                mv.getUpdatedAt());
+                mv.getUpdatedAt(),
+                mv.getEmotionFlag());
 
     }
 
@@ -48,7 +49,8 @@ public class MemoConverter {
                 m.getContent(),
                 m.getContent2(),
                 m.getCreatedAt(),
-                m.getUpdatedAt());
+                m.getUpdatedAt(),
+                m.getEmotionFlag());
 
     }
 
@@ -81,6 +83,7 @@ public class MemoConverter {
         m.setContent2(mv.getContent2());
         m.setCreatedAt(mv.getCreatedAt());
         m.setUpdatedAt(mv.getUpdatedAt());
+        m.setEmotionFlag(mv.getEmotionFlag());
 
     }
 

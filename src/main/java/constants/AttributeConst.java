@@ -62,7 +62,13 @@ public enum AttributeConst {
     MEMO_DATE("memo_date"),
     MEMO_TITLE("title"),
     MEMO_CONTENT("content_msg"),
-    MEMO_CONTENT2("content_msg2");
+    MEMO_CONTENT2("content_msg2"),
+    MEMO_EMOTION_FLG("emotion_flag"),
+
+    //感情のタグ
+    FEEL_HAPPY(0),
+    FEEL_SAD(1);
+
     //日報の管理
     //DAY_REPORT("daily_report"),
     //DAY_REPORTS("daily_reports"),

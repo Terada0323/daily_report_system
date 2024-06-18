@@ -101,6 +101,11 @@ public class Memo {
     @Column(name = JpaConst.MEMO_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    /**
+     * 感情のタグ（幸せ：0、悲しい：1）
+     */
+    @Column(name = JpaConst.MEMO_COL_EMOTION_FLAG, nullable = true)
+    private Integer emotionFlag;
 
 
 }
