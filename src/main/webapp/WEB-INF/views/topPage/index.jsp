@@ -4,6 +4,7 @@
 <%@ page import="constants.ForwardConst" %>
 
 <c:set var="actTop" value="${ForwardConst.ACT_TOP.getValue()}" />
+<c:set var="actTop2" value="${ForwardConst.ACT_TOP2.getValue()}" />
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
@@ -20,30 +21,33 @@
             </div>
         </c:if>
         <h2>らくらく日報くんへようこそ</h2>
-        <h3>【自分の日報　一覧】</h3>
-        <table id="report_list">
+
+
+
+        <h3>【自分のメモ　一覧】</h3>
+        <table id="memo_list">
             <tbody>
                 <tr>
-                    <th class="report_name">氏名</th>
-                    <th class="report_date">日付</th>
-                    <th class="report_title">タイトル</th>
-                    <th class="report_action">操作</th>
+                    <th class="memo_name">氏名</th>
+                    <th class="memo_date">日付</th>
+                    <th class="memo_title">タイトル</th>
+                    <th class="memo_action">操作</th>
                 </tr>
-                <c:forEach var="report" items="${reports}" varStatus="status">
-                    <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
+                <c:forEach var="memo" items="${memos}" varStatus="status">
+                    <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
                     <tr class="row${status.count % 2}">
-                        <td class="report_name"><c:out value="${report.employee.name}" /></td>
-                        <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="report_title">${report.title}</td>
-                        <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
+                        <td class="memo_name"><c:out value="${memo.employee.name}" /></td>
+                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="memo_title">${memo.title}</td>
+                        <td class="memo_action"><a href="<c:url value='?action=${actMemo}&command=${commShow}&id=${memo.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
         <div id="pagination">
-            （全 ${reports_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((reports_count - 1) / maxRow) + 1}" step="1">
+            （全 ${memos_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((memos_count - 1) / maxRow) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
@@ -54,6 +58,9 @@
                 </c:choose>
             </c:forEach>
         </div>
+
+
+
         <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
         <p><a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧ページへ</a></p>
         <p><a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成ページへ</a></p>

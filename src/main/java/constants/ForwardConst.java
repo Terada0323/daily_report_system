@@ -9,6 +9,7 @@ public enum ForwardConst {
     //action
     ACT("action"),
     ACT_TOP("Top"),
+    ACT_TOP2("Top2"),
     ACT_EMP("Employee"),
     ACT_REP("Report"),
     ACT_AUTH("Auth"),
@@ -36,6 +37,7 @@ public enum ForwardConst {
     //jsp
     FW_ERR_UNKNOWN("error/unknown"),
     FW_TOP_INDEX("topPage/index"),
+    FW_TOP2_INDEX("topPage2/index"),
     FW_LOGIN("login/login"),
 
     FW_EMP_INDEX("employees/index"),

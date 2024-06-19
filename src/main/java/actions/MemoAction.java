@@ -42,17 +42,24 @@ public class MemoAction extends ActionBase {
      */
     public void index() throws ServletException, IOException {
 
-        //指定されたページ数の一覧画面に表示する日報データを取得
+     // 以下追記
+
+        //セッションからログイン中の従業員情報を取得
+        EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
+
+        //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
         int page = getPage();
-        List<MemoView> memos = service.getAllPerPage(page);
+        List<MemoView> memos = service.getMinePerPage(loginEmployee, page);
 
-        //全日報データの件数を取得
-        long memosCount = service.countAll();
+        //ログイン中の従業員が作成した日報データの件数を取得
+        long myMemosCount = service.countAllMine(loginEmployee);
 
-        putRequestScope(AttributeConst.MEMOS, memos); //取得したメモデータ
-        putRequestScope(AttributeConst.MEMO_COUNT, memosCount); //全てのメモデータの件数
+        putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
+        putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
         putRequestScope(AttributeConst.PAGE, page); //ページ数
         putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
+
+        //↑ここまで追記
 
         //セッションにフラッシュメッセージが設定されている場合はリクエストスコープに移し替え、セッションからは削除する
         String flush = getSessionScope(AttributeConst.FLUSH);
@@ -64,6 +71,7 @@ public class MemoAction extends ActionBase {
         //一覧画面を表示
         forward(ForwardConst.FW_MEMO_INDEX);
     }
+
 
     /**
      * 新規登録画面を表示する

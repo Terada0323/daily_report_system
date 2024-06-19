@@ -7,11 +7,13 @@ import java.util.List;
 import javax.servlet.ServletException;
 
 import actions.views.EmployeeView;
+import actions.views.MemoView;
 import actions.views.ReportView;
 import constants.AttributeConst;
 import constants.ForwardConst;
 import constants.JpaConst;
 import constants.MessageConst;
+import services.MemoService;
 import services.ReportService;
 
 /**
@@ -21,6 +23,7 @@ import services.ReportService;
 public class ReportAction extends ActionBase {
 
     private ReportService service;
+    private MemoService service2;
 
     /**
      * メソッドを実行する
@@ -30,9 +33,12 @@ public class ReportAction extends ActionBase {
 
         service = new ReportService();
 
+        service2 = new MemoService(); //追記
+
         //メソッドを実行
         invoke();
         service.close();
+        service2.close();
     }
 
     /**
@@ -78,6 +84,40 @@ public class ReportAction extends ActionBase {
         ReportView rv = new ReportView();
         rv.setReportDate(LocalDate.now());
         putRequestScope(AttributeConst.REPORT, rv); //日付のみ設定済みの日報インスタンス
+
+
+
+     // 以下追記
+
+        //セッションからログイン中の従業員情報を取得
+        EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
+
+        //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
+        int page = getPage();
+
+        List<MemoView> memos = service2.getMinePerPage(loginEmployee, page);
+
+        //ログイン中の従業員が作成した日報データの件数を取得
+        long myMemosCount = service2.countAllMine(loginEmployee);
+
+        putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
+        putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
+        putRequestScope(AttributeConst.PAGE, page); //ページ数
+        putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
+
+        //↑ここまで追記
+
+        //セッションにフラッシュメッセージが設定されている場合はリクエストスコープに移し替え、セッションからは削除する
+        String flush = getSessionScope(AttributeConst.FLUSH);
+        if (flush != null) {
+            putRequestScope(AttributeConst.FLUSH, flush);
+            removeSessionScope(AttributeConst.FLUSH);
+        }
+
+
+
+
+
 
         //新規登録画面を表示
         forward(ForwardConst.FW_REP_NEW);
