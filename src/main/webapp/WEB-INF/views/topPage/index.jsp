@@ -57,13 +57,13 @@
         </div>
 
 
-
-
-        <p><a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧ページへ</a></p>
-        <p><a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成ページへ</a></p>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
-        <p><a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理ページへ</a><p>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">週報ページへ（作成検討？）</a></p>
+    <div class = "buttoncon">
+        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ管理</a></p>
+        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a></p>
+        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commNew}' />">日報作成</a></p>
+        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a></p>
+        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commNew}' />">週報？？</a></p>
+    </div>
 
     </c:param>
 </c:import>
