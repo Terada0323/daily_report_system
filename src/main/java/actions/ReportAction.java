@@ -69,7 +69,16 @@ public class ReportAction extends ActionBase {
 
         //一覧画面を表示
         forward(ForwardConst.FW_REP_INDEX);
+
+
+
     }
+
+
+
+
+
+
 
     /**
      * 新規登録画面を表示する
@@ -232,6 +241,22 @@ public class ReportAction extends ActionBase {
 
             putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
             putRequestScope(AttributeConst.REPORT, rv); //取得した日報データ
+
+
+          //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
+            int page = getPage();
+
+            List<MemoView> memos = service2.getMinePerPage(ev, page);
+
+            //ログイン中の従業員が作成した日報データの件数を取得
+            long myMemosCount = service2.countAllMine(ev);
+
+            putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
+            putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
+            putRequestScope(AttributeConst.PAGE, page); //ページ数
+            putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
+
+            //↑ここまで追記
 
             //編集画面を表示
             forward(ForwardConst.FW_REP_EDIT);
