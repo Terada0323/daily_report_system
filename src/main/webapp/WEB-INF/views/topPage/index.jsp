@@ -24,30 +24,27 @@
 
 
 
-        <h3>【自分のメモ　一覧】</h3>
-        <table id="memo_list">
+        <h3>【今日の目標になるはず＿一旦目標一覧】</h3>
+        <table id="report_list">
             <tbody>
                 <tr>
-                    <th class="memo_name">氏名</th>
-                    <th class="memo_date">日付</th>
-                    <th class="memo_title">タイトル</th>
-                    <th class="memo_action">操作</th>
+                    <th class="report_date">日付</th>
+                    <th class="report_goal">目標</th>
                 </tr>
-                <c:forEach var="memo" items="${memos}" varStatus="status">
-                    <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
+                <c:forEach var="report" items="${reports}" varStatus="status">
+                    <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
                     <tr class="row${status.count % 2}">
-                        <td class="memo_name"><c:out value="${memo.employee.name}" /></td>
-                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="memo_title">${memo.title}</td>
-                        <td class="memo_action"><a href="<c:url value='?action=${actMemo}&command=${commShow}&id=${memo.id}' />">詳細を見る</a></td>
+                        <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="report_goal">${report.tomorrowGoal}</td>
+
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
         <div id="pagination">
-            （全 ${memos_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((memos_count - 1) / maxRow) + 1}" step="1">
+            （全 ${reports_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((reports_count - 1) / maxRow) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
@@ -61,10 +58,12 @@
 
 
 
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+
         <p><a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧ページへ</a></p>
         <p><a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成ページへ</a></p>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">日報ページへ（要リンク編集）</a></p>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">週報ページへ（要リンク編集）</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理ページへ</a><p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">週報ページへ（作成検討？）</a></p>
+
     </c:param>
 </c:import>

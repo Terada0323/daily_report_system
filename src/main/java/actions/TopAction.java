@@ -6,11 +6,11 @@ import java.util.List; //追記
 import javax.servlet.ServletException;
 
 import actions.views.EmployeeView; //追記
-import actions.views.MemoView;
+import actions.views.ReportView;
 import constants.AttributeConst;
 import constants.ForwardConst;
 import constants.JpaConst;  //追記
-import services.MemoService;
+import services.ReportService;
 
 /**
  * トップページに関する処理を行うActionクラス
@@ -18,7 +18,7 @@ import services.MemoService;
  */
 public class TopAction extends ActionBase {
 
-    private MemoService service; //追記
+    private ReportService service; //追記
 
     /**
      * indexメソッドを実行する
@@ -26,7 +26,7 @@ public class TopAction extends ActionBase {
     @Override
     public void process() throws ServletException, IOException {
 
-        service = new MemoService(); //追記
+        service = new ReportService(); //追記
 
         //メソッドを実行
         invoke();
@@ -40,20 +40,20 @@ public class TopAction extends ActionBase {
      */
     public void index() throws ServletException, IOException {
 
-        // 以下追記
+     // 以下追記
 
         //セッションからログイン中の従業員情報を取得
         EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
         //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
         int page = getPage();
-        List<MemoView> memos = service.getMinePerPage(loginEmployee, page);
+        List<ReportView> reports = service.getMinePerPage(loginEmployee, page);
 
         //ログイン中の従業員が作成した日報データの件数を取得
-        long myMemosCount = service.countAllMine(loginEmployee);
+        long myReportsCount = service.countAllMine(loginEmployee);
 
-        putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
-        putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
+        putRequestScope(AttributeConst.REPORTS, reports); //取得した日報データ
+        putRequestScope(AttributeConst.REP_COUNT, myReportsCount); //ログイン中の従業員が作成した日報の数
         putRequestScope(AttributeConst.PAGE, page); //ページ数
         putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
 

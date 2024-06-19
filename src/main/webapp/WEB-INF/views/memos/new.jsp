@@ -7,7 +7,7 @@
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commCrt" value="${ForwardConst.CMD_CREATE.getValue()}" />
 
-<c:set var="action" value="${ForwardConst.ACT_REP.getValue()}" />
+
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commCrt" value="${ForwardConst.CMD_CREATE.getValue()}" />
 
@@ -26,7 +26,7 @@
         <h2>メモ　新規登録ページ</h2>
 
 
-        <h3>【自分の日報　一覧】</h3>
+        <h3>【今日の目標になるはず】</h3>
         <table id="report_list">
             <tbody>
                 <tr>

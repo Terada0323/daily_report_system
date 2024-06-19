@@ -8,7 +8,27 @@ body {
 #header {
     width: 100%;
     height: 70px;
-    background-color: #333333;
+    background-color: #b3eafd;
+}
+
+#wrapper{
+    height: 100%;
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+#footer {
+    width: 100%;
+    /*background-color: #89c7de;*/
+    background-color: #b3eafd;
+    color: #333;
+    text-align: center;
+    padding: 30px 0;
+
+    position: absolute;/*←絶対位置*/
+        bottom: 0; /*下に固定*/
 }
 
 #content {
@@ -24,8 +44,10 @@ h1 {
 
 h2 {
     font-size: 36px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+   /* text-align:center;*/
 }
+
 
 li {
     margin-top: 10px;
@@ -61,34 +83,99 @@ td {
     padding: 10px 2%;
 }
 
+
+/*ログインページの編集開始地点
+・ボタンのデザイン
+・入力個所のデザイン
+*/
+
+/*元あったやつ消した
 button {
     font-size: 14px;
     padding: 5px 10px;
-}
 
-#footer {
-    text-align: center;
-}
+*/
 
-#flush_success {
-    width: 100%;
-    padding-top: 28px;
-    padding-left: 2%;
-    padding-bottom: 28px;
+h2.login {
+    font-size: 36px;
     margin-bottom: 15px;
-    color: #155724;
-    background-color: #d4edda;
+    text-align:center;
 }
 
-#flush_error {
-    width: 100%;
-    padding-top: 28px;
-    padding-left: 2%;
-    padding-bottom: 28px;
-    margin-bottom: 15px;
-    color: #721c24;
-    background-color: #f8d7da;
+div.login {
+   text-align:center;
 }
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+/*ログインページの編集終了地点*/
+
+/*toppageの編集*/
+
+
+
+
+#topbutton {
+  position:relative;
+  display: inline-block;
+  margin: 0 25px;
+  text-decoration: none;
+  background: #668ad8;
+  color: #ffffff;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #627295;
+  transition: .4s;
+}
+
+#topbutton:active { /*ボタン押したときのやつ*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+
+a#topbuttonlink {
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+/*toppageの編集終了*/
+
+input{
+    border-radius: 3px;
+}
+
 
 table#employee_list th {
     width: 30%;
@@ -106,8 +193,6 @@ tr.row1 {
 tr.row0 {
         background-color: #ffffff;
 }
-
-
 select {
     height: 30px;
 }
@@ -120,7 +205,7 @@ select {
 }
 
 #employee_name {
-    color: #cccccc;
+    color: #333333;
     width: 36%;
     padding-right: 3%;
     text-align: right;
@@ -128,11 +213,12 @@ select {
 }
 
 #header a {
-    color: #eeeeee;
+    color: #333333;
 }
 
 h1 a {
-    color: #eeeeee;
+    color: #333333;
+    /*もともと#eeeeee*/
 }
 
 table#report_list th {
@@ -162,4 +248,24 @@ pre {
 
 h3 {
     font-size: larger;
+}
+
+#flush_success {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+#flush_error {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #721c24;
+    background-color: #f8d7da;
 }
