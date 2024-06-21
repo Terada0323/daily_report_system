@@ -34,8 +34,14 @@
                 <tr>
                     <th>感情のタグ</th>
                     <td><c:choose>
-                            <c:when test="${memo.emotionFlag == 0}">幸せ</c:when>
-                            <c:when test="${memo.emotionFlag == 1}">悲しい</c:when>
+                            <c:when test="${memo.emotionFlag == 0}">喜び</c:when>
+                            <c:when test="${memo.emotionFlag == 1}">期待</c:when>
+                            <c:when test="${memo.emotionFlag == 2}">怒り</c:when>
+                            <c:when test="${memo.emotionFlag == 3}">嫌悪</c:when>
+                            <c:when test="${memo.emotionFlag == 4}">悲しみ</c:when>
+                            <c:when test="${memo.emotionFlag == 5}">驚き</c:when>
+                            <c:when test="${memo.emotionFlag == 6}">恐れ</c:when>
+                            <c:when test="${memo.emotionFlag == 7}">信頼</c:when>
 
                         </c:choose>
 

@@ -27,7 +27,7 @@
                     <th class="memo_date">日付</th>
                     <th class="memo_title">タイトル</th>
                     <th class="memo_emotionFlag">感情のタグ</th>
-                    <th class="memo_action">操作</th>
+                    <th class="memo_action"></th>
                 </tr>
                 <c:forEach var="memo" items="${memos}" varStatus="status">
                     <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
@@ -37,8 +37,14 @@
                         <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="memo_title">${memo.title}</td>
                         <td><c:choose>
-                            <c:when test="${memo.emotionFlag == 0}">幸せ</c:when>
-                            <c:when test="${memo.emotionFlag == 1}">悲しい</c:when>
+                            <c:when test="${memo.emotionFlag == 0}">喜び</c:when>
+                            <c:when test="${memo.emotionFlag == 1}">期待</c:when>
+                            <c:when test="${memo.emotionFlag == 2}">怒り</c:when>
+                            <c:when test="${memo.emotionFlag == 3}">嫌悪</c:when>
+                            <c:when test="${memo.emotionFlag == 4}">悲しみ</c:when>
+                            <c:when test="${memo.emotionFlag == 5}">驚き</c:when>
+                            <c:when test="${memo.emotionFlag == 6}">恐れ</c:when>
+                            <c:when test="${memo.emotionFlag == 7}">信頼</c:when>
                         </c:choose>
                         </td>
 

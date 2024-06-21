@@ -12,6 +12,7 @@ public enum ForwardConst {
     ACT_TOP2("Top2"),
     ACT_EMP("Employee"),
     ACT_REP("Report"),
+    ACT_WEEKREP("WeekReport"),
     ACT_AUTH("Auth"),
 
     //追加編集開始
@@ -24,6 +25,8 @@ public enum ForwardConst {
     CMD("command"),
     CMD_NONE(""),
     CMD_INDEX("index"),
+    CMD_MYINDEX("myIndex"),
+    CMD_MYINDEX2("myIndex2"),
     CMD_SHOW("show"),
     CMD_SHOW_LOGIN("showLogin"),
     CMD_LOGIN("login"),
@@ -54,7 +57,13 @@ public enum ForwardConst {
     FW_MEMO_INDEX("memos/index"),
     FW_MEMO_SHOW("memos/show"),
     FW_MEMO_NEW("memos/new"),
-    FW_MEMO_EDIT("memos/edit");
+    FW_MEMO_EDIT("memos/edit"),
+
+
+    FW_WEEKREP_INDEX("weekreports/index"),
+    FW_WEEKREP_SHOW("weekreports/show"),
+    FW_WEEKREP_NEW("weekreports/new"),
+    FW_WEEKREP_EDIT("weekreports/edit");
     //追加終了位置
 
     /**

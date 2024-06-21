@@ -82,21 +82,41 @@ public enum AttributeConst {
     MEMO_EMOTION_FLG("emotion_flag"),
 
     //感情のタグ
-    FEEL_HAPPY(0),
-    FEEL_SAD(1);
+    FEEL_JOY(0),
+    FEEL_ANTICIPATION(1),
+    FEEL_ANGER(2),
+    FEEL_DISGUST(3),
+    FEEL_SADNESS(4),
+    FEEL_SURPRISE(5),
+    FEEL_FEAR(6),
+    FEEL_TRUST(7),
 
-    //日報の管理
-    //DAY_REPORT("daily_report"),
-    //DAY_REPORTS("daily_reports"),
-    //DAY_REP_COUNT("daily_reports_count"),
-    //DAY_REP_ID("id"),
-    //DAY_REP_DATE("daily_report_date"),
-    //DAY_REP_OE_CONTENT(""),
-    //DAY_REP_OE_TAG(""),
-    //DAY_REP_CONTENT("daily_report_content_msg");
+
 
     //週報の管理
+    WEEKREPORT("weekreport"),
+    WEEKREPORTS("weekreports"),
+    WEEKREP_COUNT("weekreports_count"),
+    WEEKREP_ID("id"),
+    WEEKREP_DATE("weekreport_date"),
+    WEEKREP_WEEK("weekreport_week"),
+    WEEKREP_TITLE("weektitle"),
+    WEEKREP_CONTENT("weekcontent_msg"),
+    WEEKREP_CONTENT2("weekcontent_msg2"),
+    WEEKREP_TOMORROWGOAL("weektomorrow_goal"),
+    WEEKREP_CONTENT_OE1("weekcontent_oe1"),
+    WEEKREP_CONTENT_OE2("weekcontent_oe2"),
+    WEEKREP_OE1_FLG("weekoe1_flag"),
+    WEEKREP_OE2_FLG("weekoe2_flag"),
 
+    WEEKOE_1(0),
+    WEEKOE_2(1),
+    WEEKOE_3(2),
+    WEEKOE_4(3),
+    WEEKOE_5(4),
+    WEEKOE_6(5),
+    WEEKOE_7(6),
+    WEEKOE_8(7);
 
     //lesson17から変数の編集と追加終了位置
 

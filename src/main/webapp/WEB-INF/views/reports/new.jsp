@@ -26,18 +26,35 @@
         <table id="memo_list">
             <tbody>
                 <tr>
-                    <th class="memo_name">氏名</th>
+
                     <th class="memo_date">日付</th>
                     <th class="memo_title">タイトル</th>
-                    <th class="memo_action">操作</th>
+                    <th class="memo_content">内容（事実）</th>
+                    <th class="memo_content2">内容（気づき、感情）</th>
+                    <th class="memo_emotionFlag">感情のタグ</th>
+
                 </tr>
                 <c:forEach var="memo" items="${memos}" varStatus="status">
                     <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
                     <tr class="row${status.count % 2}">
-                        <td class="memo_name"><c:out value="${memo.employee.name}" /></td>
                         <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="memo_title">${memo.title}</td>
-                        <td class="memo_action"><a href="<c:url value='?action=${actMemo}&command=${commShow}&id=${memo.id}' />">詳細を見る</a></td>
+                        <td class="memo_content">${memo.content}</td>
+                        <td class="memo_content2">${memo.content2}</td>
+                        <td><c:choose>
+                            <c:when test="${memo.emotionFlag == 0}">喜び</c:when>
+                            <c:when test="${memo.emotionFlag == 1}">期待</c:when>
+                            <c:when test="${memo.emotionFlag == 2}">怒り</c:when>
+                            <c:when test="${memo.emotionFlag == 3}">嫌悪</c:when>
+                            <c:when test="${memo.emotionFlag == 4}">悲しみ</c:when>
+                            <c:when test="${memo.emotionFlag == 5}">驚き</c:when>
+                            <c:when test="${memo.emotionFlag == 6}">恐れ</c:when>
+                            <c:when test="${memo.emotionFlag == 7}">信頼</c:when>
+
+                        </c:choose>
+
+                        </td>
+
                     </tr>
                 </c:forEach>
             </tbody>

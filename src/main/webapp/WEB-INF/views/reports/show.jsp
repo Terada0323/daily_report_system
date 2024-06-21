@@ -40,36 +40,37 @@
                     <td><pre><c:out value="${report.contentOe1}" /></pre></td>
                 </tr>
                 <tr>
-                    <th>OEの内容２</th>
-                    <td><pre><c:out value="${report.contentOe2}" /></pre></td>
-                </tr>
-                <tr>
                     <th>OEのタグ1</th>
                     <td><c:choose>
-                            <c:when test="${report.oeFlag1 == 0}">1</c:when>
-                            <c:when test="${report.oeFlag1 == 1}">2</c:when>
-                            <c:when test="${report.oeFlag1 == 2}">3</c:when>
-                            <c:when test="${report.oeFlag1 == 3}">4</c:when>
-                            <c:when test="${report.oeFlag1 == 4}">5</c:when>
-                            <c:when test="${report.oeFlag1 == 5}">6</c:when>
-                            <c:when test="${report.oeFlag1 == 6}">7</c:when>
-                            <c:when test="${report.oeFlag1 == 7}">8</c:when>
+                            <c:when test="${report.oeFlag1 == 0}">1.目的を考え行動する</c:when>
+                            <c:when test="${report.oeFlag1 == 1}">2.正しいことを正しく行う</c:when>
+                            <c:when test="${report.oeFlag1 == 2}">3.臆せず大胆に挑戦する</c:when>
+                            <c:when test="${report.oeFlag1 == 3}">4.当事者意識を持つ</c:when>
+                            <c:when test="${report.oeFlag1 == 4}">5.相手軸を意識する</c:when>
+                            <c:when test="${report.oeFlag1 == 5}">6.礼節をもって接する</c:when>
+                            <c:when test="${report.oeFlag1 == 6}">7.スピードと質に拘る</c:when>
+                            <c:when test="${report.oeFlag1 == 7}">8.プロとして学び続ける</c:when>
 
                         </c:choose>
 
                         </td>
                 </tr>
                 <tr>
+                    <th>OEの内容２</th>
+                    <td><pre><c:out value="${report.contentOe2}" /></pre></td>
+                </tr>
+
+                <tr>
                     <th>OEのタグ2</th>
                     <td><c:choose>
-                            <c:when test="${report.oeFlag2 == 0}">1</c:when>
-                            <c:when test="${report.oeFlag2 == 1}">2</c:when>
-                            <c:when test="${report.oeFlag2 == 2}">3</c:when>
-                            <c:when test="${report.oeFlag2 == 3}">4</c:when>
-                            <c:when test="${report.oeFlag2 == 4}">5</c:when>
-                            <c:when test="${report.oeFlag2 == 5}">6</c:when>
-                            <c:when test="${report.oeFlag2 == 6}">7</c:when>
-                            <c:when test="${report.oeFlag2 == 7}">8</c:when>
+                            <c:when test="${report.oeFlag2 == 0}">1.目的を考え行動する</c:when>
+                            <c:when test="${report.oeFlag2 == 1}">2.正しいことを正しく行う</c:when>
+                            <c:when test="${report.oeFlag2 == 2}">3.臆せず大胆に挑戦する</c:when>
+                            <c:when test="${report.oeFlag2 == 3}">4.当事者意識を持つ</c:when>
+                            <c:when test="${report.oeFlag2 == 4}">5.相手軸を意識する</c:when>
+                            <c:when test="${report.oeFlag2 == 5}">6.礼節をもって接する</c:when>
+                            <c:when test="${report.oeFlag2 == 6}">7.スピードと質に拘る</c:when>
+                            <c:when test="${report.oeFlag2 == 7}">8.プロとして学び続ける</c:when>
 
                         </c:choose>
 

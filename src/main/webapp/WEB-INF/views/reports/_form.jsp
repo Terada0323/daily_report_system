@@ -89,35 +89,36 @@
 <br />
 <br />
 
-<label for="${AttributeConst.REP_CONTENT_OE2.getValue()}">OEの内容２</label>
-<br />
-<textarea name="${AttributeConst.REP_CONTENT_OE2.getValue()}"
-    id="${AttributeConst.REP_CONTENT_OE2.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
-<br />
-<br />
-
 <label for="${AttributeConst.REP_OE1_FLG.getValue()}">OE1のタグ</label>
 <br />
 <select name="${AttributeConst.REP_OE1_FLG.getValue()}"
     id="${AttributeConst.REP_OE1_FLG.getValue()}">
     <option value="${AttributeConst.OE_1.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1.目的を考え行動する</option>
     <option value="${AttributeConst.OE_2.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2.正しいことを正しく行う</option>
     <option value="${AttributeConst.OE_3.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3.臆せず大胆に挑戦する</option>
     <option value="${AttributeConst.OE_4.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4.当事者意識を持つ</option>
     <option value="${AttributeConst.OE_5.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5.相手軸を意識する</option>
     <option value="${AttributeConst.OE_6.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6.礼節をもって接する</option>
     <option value="${AttributeConst.OE_7.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7.スピードと質に拘る</option>
     <option value="${AttributeConst.OE_8.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8.プロとして学び続ける</option>
 </select>
 <br />
+<br />
+
+<label for="${AttributeConst.REP_CONTENT_OE2.getValue()}">OEの内容２</label>
+<br />
+<textarea name="${AttributeConst.REP_CONTENT_OE2.getValue()}"
+    id="${AttributeConst.REP_CONTENT_OE2.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
+<br />
+
 <br />
 
 <label for="${AttributeConst.REP_OE2_FLG.getValue()}">OE2のタグ</label>
@@ -125,21 +126,21 @@
 <select name="${AttributeConst.REP_OE2_FLG.getValue()}"
     id="${AttributeConst.REP_OE2_FLG.getValue()}">
     <option value="${AttributeConst.OE_1.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1.目的を考え行動する</option>
     <option value="${AttributeConst.OE_2.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2.正しいことを正しく行う</option>
     <option value="${AttributeConst.OE_3.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3臆せず大胆に挑戦する</option>
     <option value="${AttributeConst.OE_4.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4.当事者意識を持つ</option>
     <option value="${AttributeConst.OE_5.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5.相手軸を意識する</option>
     <option value="${AttributeConst.OE_6.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6.礼節をもって接する</option>
     <option value="${AttributeConst.OE_7.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7.スピードと質に拘る</option>
     <option value="${AttributeConst.OE_8.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8.プロとして学び続ける</option>
 </select>
 <br />
 <br />

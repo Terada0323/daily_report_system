@@ -3,7 +3,7 @@
 <%@ page import="constants.ForwardConst" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
+<c:set var="actWeekRep" value="${ForwardConst.ACT_WEEKREP.getValue()}" />
 <c:set var="commUpd" value="${ForwardConst.CMD_UPDATE.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
 
@@ -26,7 +26,7 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
 
-        <h2>日報 編集ページ</h2>
+        <h2>週報 編集ページ</h2>
 
 <h3>【自分のメモ　一覧】</h3>
         <table id="memo_list">
@@ -84,12 +84,12 @@
 
 
 
-        <form method="POST" action="<c:url value='?action=${actRep}&command=${commUpd}' />">
+        <form method="POST" action="<c:url value='?action=${actWeekRep}&command=${commUpd}' />">
             <c:import url="_form.jsp" />
         </form>
 
         <p>
-            <a href="<c:url value='?action=Report&command=index' />">一覧に戻る</a>
+            <a href="<c:url value='?action=WeekReport&command=index' />">一覧に戻る</a>
         </p>
     </c:param>
 </c:import>

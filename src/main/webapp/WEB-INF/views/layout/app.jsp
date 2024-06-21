@@ -6,10 +6,12 @@
 <c:set var="actTop" value="${ForwardConst.ACT_TOP.getValue()}" />
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
+<c:set var="actWeekRep" value="${ForwardConst.ACT_WEEKREP.getValue()}" />
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
 
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
+<c:set var="commMyIdx" value="${ForwardConst.CMD_MYINDEX.getValue()}" />
 <c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
 <c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
 
@@ -32,8 +34,9 @@
                     </c:if>
                     <a href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ一覧</a>&nbsp;
                     <a href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a>&nbsp;
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
-                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">週報管理(作成検討中？)</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">みんなの日報</a>&nbsp;
+                    <a href="<c:url value='?action=${actRep}&command=${commMyIdx}' />">日報一覧</a>&nbsp;
+                    <a href="<c:url value='?action=${actWeekRep}&command=${commIdx}' />">週報管理</a>&nbsp;
                 </c:if>
             </div>
             <c:if test="${sessionScope.login_employee != null}">
