@@ -19,6 +19,7 @@ public enum ForwardConst {
     ACT_DAY_REP("DayReport"),
     ACT_WEEK_REP("WeekReport"),
     ACT_MEMO("Memo"),
+    ACT_COMENT("Coment"),
     //追加編集終了
 
     //command
@@ -58,6 +59,12 @@ public enum ForwardConst {
     FW_MEMO_SHOW("memos/show"),
     FW_MEMO_NEW("memos/new"),
     FW_MEMO_EDIT("memos/edit"),
+
+
+    FW_COMENT_INDEX("coments/index"),
+    FW_COMENT_SHOW("coments/show"),
+    FW_COMENT_NEW("coments/new"),
+    FW_COMENT_EDIT("coments/edit"),
 
 
     FW_WEEKREP_INDEX("weekreports/index"),

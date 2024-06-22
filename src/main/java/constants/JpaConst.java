@@ -128,12 +128,27 @@ public interface JpaConst {
 
 
 
+
+  //コメントテーブル
+    String TABLE_COMENT = "coments"; //テーブル名
+    //メモテーブルカラム
+    String COMENT_COL_ID = "id"; //id
+    String COMENT_COL_EMP = "employee_id"; //メモを作成した従業員のid
+    String COMENT_COL_COMENT_DATE = "coment_date"; //いつのメモかを示す日付
+    String COMENT_COL_TITLE = "coment_title"; //メモのタイトル
+    String COMENT_COL_CONTENT = "coment_content"; //メモの内容
+    String COMENT_COL_CREATED_AT = "created_at"; //登録日時
+    String COMENT_COL_UPDATED_AT = "updated_at"; //更新日時
+
+
+
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
 
     //Entity名追加編集開始位置
     String ENTITY_MEMO = "memo"; //メモ
+    String ENTITY_COMENT = "coment"; //メモ
     String ENTITY_DAY_REP = "dailyReport"; //日報
     String ENTITY_WEEK_REP = "weekreport"; //日報
 
@@ -182,6 +197,21 @@ public interface JpaConst {
     //指定した従業員が作成したメモの件数を取得する
     String Q_MEMO_COUNT_ALL_MINE = ENTITY_MEMO + ".countAllMine";
     String Q_MEMO_COUNT_ALL_MINE_DEF = "SELECT COUNT(m) FROM Memo AS m WHERE m.employee = :" + JPQL_PARM_EMPLOYEE;
+
+    //全てのコメントをidの降順に取得する
+    String Q_COMENT_GET_ALL = ENTITY_COMENT + ".getAll";
+    String Q_COMENT_GET_ALL_DEF = "SELECT c FROM Coment AS c ORDER BY c.id DESC";
+    //全てのメモの件数を取得する
+    String Q_COMENT_COUNT = ENTITY_COMENT + ".count";
+    String Q_COMENT_COUNT_DEF = "SELECT COUNT(c) FROM Coment AS c";
+    //指定した従業員が作成したメモを全件idの降順で取得する
+    String Q_COMENT_GET_ALL_MINE = ENTITY_COMENT + ".getAllMine";
+    String Q_COMENT_GET_ALL_MINE_DEF = "SELECT c FROM Coment AS c WHERE c.employee = :" + JPQL_PARM_EMPLOYEE + " ORDER BY c.id DESC";
+    //指定した従業員が作成したメモの件数を取得する
+    String Q_COMENT_COUNT_ALL_MINE = ENTITY_COMENT + ".countAllMine";
+    String Q_COMENT_COUNT_ALL_MINE_DEF = "SELECT COUNT(c) FROM Coment AS c WHERE c.employee = :" + JPQL_PARM_EMPLOYEE;
+
+
 
     //週報DBからデータ取得（0617_2135追加）
     //全ての週報をidの降順に取得する

@@ -12,6 +12,7 @@ public enum AttributeConst {
     //一覧画面共通
     MAX_ROW("maxRow"),
     PAGE("page"),
+    PAGE2("page2"),
     MEMOPAGE("memopage"),
 
     //入力フォーム共通
@@ -116,7 +117,19 @@ public enum AttributeConst {
     WEEKOE_5(4),
     WEEKOE_6(5),
     WEEKOE_7(6),
-    WEEKOE_8(7);
+    WEEKOE_8(7),
+
+
+
+
+  //コメントの管理
+    COMENT("coment"),
+    COMENTS("coments"),
+    COMENT_COUNT("coments_count"),
+    COMENT_ID("id"),
+    COMENT_DATE("coment_date"),
+    COMENT_TITLE("title"),
+    COMENT_CONTENT("content_msg");
 
     //lesson17から変数の編集と追加終了位置
 

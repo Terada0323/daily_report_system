@@ -10,6 +10,7 @@
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actWeekRep" value="${ForwardConst.ACT_WEEKREP.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
+<c:set var="actComent" value="${ForwardConst.ACT_COMENT.getValue()}" />
 
 <c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
@@ -27,7 +28,14 @@
 
         <h2>らくらく日報くんへようこそ</h2>
 
+<h3>【今日の目標】</h3>
 
+
+        <c:forEach var="report" items="${reports}" varStatus="status">
+            <h2>
+                <c:out value="${report.tomorrowGoal}" />
+            </h2>
+        </c:forEach>
 
         <div class="buttoncon">
             <p id="topbutton">
@@ -48,20 +56,87 @@
             </p>
             <p id="topbutton">
                 <a id="topbuttonlink"
-                    href="<c:url value='?action=${actWeekRep}&command=${commIdx}' />">週報？？</a>
+                    href="<c:url value='?action=${actWeekRep}&command=${commIdx}' />">週報管理</a>
             </p>
+
         </div>
 
 
 
-        <h3>【今日の目標】</h3>
 
 
-        <c:forEach var="report" items="${reports}" varStatus="status">
-            <h2>
-                <c:out value="${report.tomorrowGoal}" />
-            </h2>
-        </c:forEach>
+
+<%-- <h2>コメント　一覧</h2>
+        <table id="coment_list">
+            <tbody>
+                <tr>
+
+                    <th class="coment_date">日付</th>
+                    <th class="coment_title">タイトル</th>
+                    <th class="coment_action"></th>
+                </tr>
+                <c:forEach var="coment" items="${coments}" varStatus="status">
+                    <fmt:parseDate value="${coment.comentDate}" pattern="yyyy-MM-dd" var="comentDay" type="date" />
+
+                    <tr class="row${status.count % 2}">
+
+                        <td class="coment_date"><fmt:formatDate value='${comentDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="coment_title">${coment.title}</td>
+
+                        <td class="coment_action"><a href="<c:url value='?action=${actComent}&command=${commShow}&id=${coment.id}' />">詳細を見る</a></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+--%>
+
+
+
+        <h2>コメント一覧</h2>
+        <ul>
+            <c:forEach var="coment" items="${coments}" varStatus="status">
+                <li>
+                        <c:out value="${coment.id}"/>
+                    ：<c:out value="${coment.title}"></c:out> &gt; <c:out value="${coment.content}" />
+                </li>
+            </c:forEach>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="pagination">
+            （全 ${coments_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((coments_count - 1) / maxRow) + 1}" step="1">
+                <c:choose>
+                    <c:when test="${i == page}">
+                        <c:out value="${i}" />&nbsp;
+                    </c:when>
+                    <c:otherwise>
+                        <a href="<c:url value='?action=${actComent}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </div>
+
+
+
+
+
+
+
+               <p><a href="<c:url value='?action=${actComent}&command=${commNew}' />">コメント作成</a></p>
 
     </c:param>
 </c:import>
