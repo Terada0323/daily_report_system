@@ -110,7 +110,7 @@ public class ReportAction extends ActionBase {
         }
 
         //一覧画面を表示
-        forward(ForwardConst.FW_REP_INDEX);
+        forward(ForwardConst.FW_REP_MYINDEX);
     }
 
 

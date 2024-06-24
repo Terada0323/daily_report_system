@@ -16,6 +16,7 @@
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actWeekRep" value="${ForwardConst.ACT_WEEKREP.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
+<c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
@@ -73,6 +74,8 @@
                 </c:choose>
             </c:forEach>
         </div>
+
+
 
 
         <form method="POST" action="<c:url value='?action=${action}&command=${commCrt}' />">

@@ -206,6 +206,7 @@ public class WeekReportAction extends ActionBase {
 
         //↑ここまで追記
 
+
         //セッションにフラッシュメッセージが設定されている場合はリクエストスコープに移し替え、セッションからは削除する
         String flush = getSessionScope(AttributeConst.FLUSH);
         if (flush != null) {
@@ -353,18 +354,24 @@ public class WeekReportAction extends ActionBase {
             putRequestScope(AttributeConst.WEEKREPORT, wv); //取得した日報データ
 
 
+          //セッションからログイン中の従業員情報を取得
+            EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
           //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
             int page = getPage();
 
-            List<MemoView> memos = service2.getMinePerPage(ev, page);
+            List<MemoView> memos = service2.getMinePerPage(loginEmployee, page);
 
             //ログイン中の従業員が作成した日報データの件数を取得
-            long myMemosCount = service2.countAllMine(ev);
+            long myMemosCount = service2.countAllMine(loginEmployee);
+
+            //reports.subList(1, Math.toIntExact(myReportsCount)).clear();
 
             putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
             putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
             putRequestScope(AttributeConst.PAGE, page); //ページ数
             putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
+
+            //↑ここまで追記
 
             //↑ここまで追記
 

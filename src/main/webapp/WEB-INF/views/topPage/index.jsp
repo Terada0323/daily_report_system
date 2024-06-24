@@ -42,6 +42,7 @@
                 <a id="topbuttonlink"
                     href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ管理</a>
             </p>
+
             <p id="topbutton">
                 <a id="topbuttonlink"
                     href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a>
@@ -97,6 +98,8 @@
             <c:forEach var="coment" items="${coments}" varStatus="status">
                 <li>
                         <c:out value="${coment.id}"/>
+
+                        <c:out value="${coment.employee.name}"/>
                     ：<c:out value="${coment.title}"></c:out> &gt; <c:out value="${coment.content}" />
                 </li>
             </c:forEach>
@@ -130,9 +133,15 @@
             </c:forEach>
         </div>
 
-
-
-
+<p id="topbutton">
+                <a id="topbuttonlink"
+                    href="javascript:newWindow();">メモ管理</a>
+        <script>
+            function newWindow() {
+                window.open("http://localhost:8080/daily_report_system/?action=Memo&command=index", "newWindow", "left=700, top=300, width=500, height=500, scrollbars=1");
+            }
+        </script>
+            </p>
 
 
 
