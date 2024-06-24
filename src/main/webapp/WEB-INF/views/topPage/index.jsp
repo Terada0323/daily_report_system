@@ -133,15 +133,7 @@
             </c:forEach>
         </div>
 
-<p id="topbutton">
-                <a id="topbuttonlink"
-                    href="javascript:newWindow();">メモ管理</a>
-        <script>
-            function newWindow() {
-                window.open("http://localhost:8080/daily_report_system/?action=Memo&command=index", "newWindow", "left=700, top=300, width=500, height=500, scrollbars=1");
-            }
-        </script>
-            </p>
+
 
 
 

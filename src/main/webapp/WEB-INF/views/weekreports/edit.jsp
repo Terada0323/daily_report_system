@@ -3,6 +3,7 @@
 <%@ page import="constants.ForwardConst" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+
 <c:set var="actWeekRep" value="${ForwardConst.ACT_WEEKREP.getValue()}" />
 <c:set var="commUpd" value="${ForwardConst.CMD_UPDATE.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
@@ -28,57 +29,34 @@
 
         <h2>週報 編集ページ</h2>
 
-<h3>【自分のメモ　一覧】</h3>
-        <table id="memo_list">
+
+<h3>今週の日報</h3>
+
+
+<table id="report_list">
             <tbody>
                 <tr>
 
-                    <th class="memo_date">日付</th>
-                    <th class="memo_title">タイトル</th>
-                    <th class="memo_content">内容（事実）</th>
-                    <th class="memo_content2">内容（気づき、感情）</th>
-                    <th class="memo_emotionFlag">感情のタグ</th>
+                    <th class="report_date">日付</th>
 
+
+                    <th class="report_action"></th>
                 </tr>
-                <c:forEach var="memo" items="${memos}" varStatus="status">
-                    <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
+                <c:forEach var="report" items="${reports}" varStatus="status">
+                    <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
+
                     <tr class="row${status.count % 2}">
-                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="memo_title">${memo.title}</td>
-                        <td class="memo_content">${memo.content}</td>
-                        <td class="memo_content2">${memo.content2}</td>
-                        <td><c:choose>
-                            <c:when test="${memo.emotionFlag == 0}">喜び</c:when>
-                            <c:when test="${memo.emotionFlag == 1}">期待</c:when>
-                            <c:when test="${memo.emotionFlag == 2}">怒り</c:when>
-                            <c:when test="${memo.emotionFlag == 3}">嫌悪</c:when>
-                            <c:when test="${memo.emotionFlag == 4}">悲しみ</c:when>
-                            <c:when test="${memo.emotionFlag == 5}">驚き</c:when>
-                            <c:when test="${memo.emotionFlag == 6}">恐れ</c:when>
-                            <c:when test="${memo.emotionFlag == 7}">信頼</c:when>
 
-                        </c:choose>
+                        <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
 
-                        </td>
+
+                        <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />" target="_blank">詳細を見る</a></td>
 
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
-        <div id="pagination">
-            （全 ${memos_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((memos_count - 1) / maxRow) + 1}" step="1">
-                <c:choose>
-                    <c:when test="${i == page}">
-                        <c:out value="${i}" />&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a href="<c:url value='?action=${actTop}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </div>
 
 
 
